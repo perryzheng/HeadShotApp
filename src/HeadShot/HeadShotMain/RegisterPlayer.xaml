@@ -1,0 +1,68 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="HeadShotMain.RegisterPlayer"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Landscape" Orientation="LandscapeLeft"
+    mc:Ignorable="d" d:DesignHeight="480" d:DesignWidth="800"
+    shell:SystemTray.IsVisible= "False" Loaded="PhoneApplicationPage_Loaded">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Rectangle Width="640" Height="480" 
+                       HorizontalAlignment="Left" 
+                       x:Name="viewfinderContainer">
+
+            <Rectangle.Fill>
+                <VideoBrush x:Name="viewfinderBrush" />
+            </Rectangle.Fill>
+        </Rectangle>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="27"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="640"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Image Grid.Row="0" Height="300" Grid.RowSpan="10" Source="/HeadShotMain;component/Images/tshirt.png" />
+            <TextBlock Grid.Row="0" Name="textDescription" Text="Here is where you calibrate the color of your T-shirt: " FontFamily="/HeadShotMain;component/Fonts/Fonts.zip#Quartz MS" />
+            <TextBlock Grid.Row="1" Margin="50,0,0,0" Name="textDescription_Copy" Text="Step1: Line the BOX up with your tshirt" FontFamily="/HeadShotMain;component/Fonts/Fonts.zip#Quartz MS" />
+            <TextBlock Grid.Row="2" Margin="50,0,0,0" Name="textDescription_Copy1" Text="Step 2: Press the &quot;Calibrate&quot; button." FontFamily="/HeadShotMain;component/Fonts/Fonts.zip#Quartz MS" />
+            <StackPanel Grid.Column="1" Grid.RowSpan="15">
+                <Button x:Name="calibButton" Content="Calibrate" FontSize="21.333" FontWeight="ExtraBold" Height="117" Click="calibButton_Click" Canvas.Left="633" Canvas.Top="6" Width="163" FontFamily="/HeadShotMain;component/Fonts/Fonts.zip#Quartz MS" />
+                <TextBlock Name="textBlock1" Text="Color of T-shirt " FontFamily="/HeadShotMain;component/Fonts/Fonts.zip#Chiller" FontSize="29.333" Height="38" VerticalAlignment="Top" />
+                <Rectangle Name="calibColor" Fill="Black" Width="100" Height="100"  />
+                <TextBlock Height="35" x:Name="textDescription_Copy2" Text="NEXT:" Width="67" FontFamily="/HeadShotMain;component/Fonts/Fonts.zip#Quartz MS" />
+                <Button x:Name="doneButton" Content="Play" FontSize="26" FontWeight="ExtraBold" Height="92" Click="doneButton_Click" Canvas.Left="637" Canvas.Top="382" Width="161" FontFamily="/HeadShotMain;component/Fonts/Fonts.zip#Quartz MS" />
+            </StackPanel>
+
+            <TextBlock Grid.Row="10" Height="40" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Name="txtDebug" FontSize="24" FontWeight="ExtraBold" />
+        </Grid>
+        <Canvas Grid.Row="0" Grid.Column="0" Grid.RowSpan="10" HorizontalAlignment="Left"  Height="480" Width="640">
+            <Rectangle x:Name="renderDisplay" Height="480" Width="640" Visibility="Collapsed">
+                <Rectangle.Fill>
+                    <ImageBrush x:Name="renderBrush" />
+                </Rectangle.Fill>
+            </Rectangle>
+            <Path x:Name="targetPath" Stroke="Red"
+                        StrokeThickness="3">
+                <Path.Data>
+                    <RectangleGeometry x:Name="targetGeom" Rect="0 0 100 100" />
+                </Path.Data>
+            </Path>
+        </Canvas>
+    </Grid>
+
+</phone:PhoneApplicationPage>

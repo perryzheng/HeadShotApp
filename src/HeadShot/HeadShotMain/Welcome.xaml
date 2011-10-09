@@ -1,0 +1,48 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="HeadShotMain.Welcome"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Landscape" Orientation="LandscapeLeft"
+    mc:Ignorable="d" d:DesignHeight="480" d:DesignWidth="800"
+    shell:SystemTray.IsVisible="False">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
+        	<TextBlock x:Name="PageTitle" Text="HEADSHOT" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" FontFamily="/HeadShotMain;component/Fonts/Fonts.zip#4YEOstamp" Height="72" HorizontalAlignment="Left" Width="364"/>
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <Button Content="CALIBRATE T-SHIRT" Height="87" HorizontalAlignment="Left" Margin="476,0,0,16" Name="button1" VerticalAlignment="Bottom" Width="315" Click="button1_Click" Grid.Row="1" FontFamily="/HeadShotMain;component/Fonts/Fonts.zip#Quartz MS" />
+        <TextBlock HorizontalAlignment="Left" Margin="30,11,0,0" Grid.Row="1" TextWrapping="Wrap" Text="How to Play:" Width="365" FontFamily="/HeadShotMain;component/Fonts/Fonts.zip#Quartz MS" Height="65" VerticalAlignment="Top" FontSize="48"/>
+        <TextBlock Margin="96,78,299,0" Grid.Row="1" TextWrapping="Wrap" Text="Step1: Calibrate T-shirt Color" FontFamily="/HeadShotMain;component/Fonts/Fonts.zip#Quartz MS" Height="36" VerticalAlignment="Top" FontSize="29.333"/>
+        <TextBlock Margin="96,119,360,0" Grid.Row="1" TextWrapping="Wrap" Text="Step 2: PLAY!" FontFamily="/HeadShotMain;component/Fonts/Fonts.zip#Quartz MS" Height="36" VerticalAlignment="Top" FontSize="29.333"/>
+        <TextBlock Margin="384,0,322,42" Grid.Row="1" TextWrapping="Wrap" Text="NEXT:" FontFamily="/HeadShotMain;component/Fonts/Fonts.zip#Quartz MS" Height="36" VerticalAlignment="Bottom" FontSize="29.333"/>
+    </Grid>
+ 
+    <!--Sample code showing usage of ApplicationBar-->
+    <!--<phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button1.png" Text="Button 1"/>
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button2.png" Text="Button 2"/>
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="MenuItem 1"/>
+                <shell:ApplicationBarMenuItem Text="MenuItem 2"/>
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>-->
+
+</phone:PhoneApplicationPage>
